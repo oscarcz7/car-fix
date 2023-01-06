@@ -6,8 +6,8 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-import { login } from "../slices/auth";
-import { clearMessage } from "../slices/message";
+import { login } from "../../slices/auth";
+import { clearMessage } from "../../slices/message";
 
 export function SignIn() {
   let navigate = useNavigate();
@@ -52,9 +52,9 @@ export function SignIn() {
     return <Navigate to="/profile" />;
   }
   return (
-    <section className="grid items-center h-screen">
+    <section className="container grid items-center">
       <div className="p-8 my-auto text-center sm:p-10 md:p-20 xl:px-32 xl:py-24">
-        <Typography color="gray" className="mb-16">
+        <Typography  className="mb-16 text-2xl font-bold text-blue-900">
           Accede a tu cuenta
         </Typography>
         <Formik
@@ -69,7 +69,7 @@ export function SignIn() {
             <div className="mb-4">
               <Input
                 size="lg"
-                label="Password"
+                label="Contraseña"
                 type="password"
                 name="contraseña"
               />
