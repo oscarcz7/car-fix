@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-import { register } from "../slices/auth";
-import { clearMessage } from "../slices/message";
+import { register } from "../../slices/auth";
+import { clearMessage } from "../../slices/message";
 
 export function Register() {
   const [successful, setSuccessful] = useState(false);
@@ -61,15 +61,15 @@ export function Register() {
       });
   };
   return (
-    <section className="grid items-center h-screen">
+    <section className="grid items-center">
       <div className="p-8 my-auto text-center sm:p-10 md:p-20 xl:px-32 xl:py-24">
-        <Typography color="gray" className="mb-16">
-          Accede a tu cuenta
+      <Typography  className="mb-16 text-2xl font-bold text-blue-900">
+          Crea una cuenta
         </Typography>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-          onSubmit={handleLogin}
+          onSubmit={handleRegister}
         >
           <Form action="#" className="text-left max-w-[24rem] mx-auto">
             <div className="mb-8">
@@ -78,9 +78,9 @@ export function Register() {
             <div className="mb-4">
               <Input
                 size="lg"
-                label="Password"
+                label="Contraseña"
                 type="password"
-                name="contraseña"
+                name="Contraseña"
               />
             </div>
             <div className="flex flex-wrap items-center justify-between gap-2">
